@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/nav.css">
+	<link rel="stylesheet" type="text/css" href="css/slider.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/js.js"></script>
 <head>
 	<title>Dynamo - Sala de Ensayo</title>
 </head>
 <body>
-	Hi
+
+	<nav>
+		<ul>			
+			<li><a href="#" alt="">Inicio</a></li>
+			<li><a href="#" alt="">Contacto</a></li>
+			<li><a href="#" alt="">Reservas</a></li>
+			<li><a href="#" alt="">Social media</a></li>
+		</ul>
+	</nav>
+
+	<div class="hero">
+		<section>
+			<p>Estas escuchando nuestra radio en vivo</p>			
+			<br>
+			<input type="range" name="volume" id="volume">
+			<audio autoplay=false>
+				<source src="http://audio-mp3.ibiblio.org:8000/wcpe.mp3" type="audio/mpeg">
+		  		<source src="http://audio-ogg.ibiblio.org:8000/wcpe.ogg" type="audio/ogg">
+				Tu browser no soporta HTML5 audio :(
+			</audio>
+		</section>
+	</div>
+
 </body>
 </html>
