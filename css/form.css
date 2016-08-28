@@ -1,0 +1,29 @@
+input[type=submit] {
+	background: #FFE100;
+	border: 0;
+	font: inherit;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	padding: 0.5em 1em;
+	cursor: pointer;	
+}
+
+label {
+	display: block;
+}
+
+input[type=email], textarea {
+	width: 100%;
+	border: 3px solid #FFE100;
+	font: inherit;
+	font-size: 0.8em;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	padding: 0.3em;
+}
+
+textarea {
+	height: 10rem;
+	line-height: 1.5em;
+	resize: none;
+}

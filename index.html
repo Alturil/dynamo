@@ -3,6 +3,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
 	<link rel="stylesheet" type="text/css" href="css/slider.css">
+	<link rel="stylesheet" type="text/css" href="css/form.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -13,7 +14,7 @@
 <body>
 
 	<nav>
-		<ul>			
+		<ul class="row">
 			<li><a href="#" alt="">Inicio</a></li>
 			<li><a href="#" alt="">Contacto</a></li>
 			<li><a href="#" alt="">Reservas</a></li>
@@ -22,17 +23,30 @@
 	</nav>
 
 	<div class="hero">
-		<section>
+		<section class="row">
 			<p>Estas escuchando nuestra radio en vivo</p>			
 			<br>
-			<input type="range" name="volume" id="volume">
-			<audio autoplay=false>
+			<input type="range" min="0" max="100" step="1" name="volume" id="volume">
+			<audio autoplay=false id="audio">
 				<source src="http://audio-mp3.ibiblio.org:8000/wcpe.mp3" type="audio/mpeg">
 		  		<source src="http://audio-ogg.ibiblio.org:8000/wcpe.ogg" type="audio/ogg">
 				Tu browser no soporta HTML5 audio :(
 			</audio>
 		</section>
 	</div>
+
+	<section class="row" id="contacto">
+		<div class="col-6">
+			<h1>Contacto</h1>
+			<form>
+				<label for="email">email:</label>
+	  			<input type="email" name="email" id="email">
+	  			<label for="message">mensaje:</label>
+	  			<textarea name="message" id="message"></textarea>
+	  			<input type="submit" value="Enviar">
+			</form>
+		</div>
+	</section>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
 
 /* GRID */
 
-.row	{width: 100%;	}
+.row	{width: 1000px; margin: auto;	}
 .col-1 	{width: 8.33%;	}
 .col-2 	{width: 16.66%;	}
 .col-3 	{width: 25%;	}
@@ -38,17 +38,28 @@ body {
 	height: 30rem;
 	display: flex;
 	justify-content: center;
+	margin-top: 4rem;
 }
 
-.hero section {
-	width: 1000px;
+.hero section {	
 	display: flex;
 	height: 100%;	
 	align-items: center;
-	padding: 1em;
+	padding: 1em;	
 }
 
 .hero p {
 	background: rgba(0,0,0,0.5);
 	padding: 0.5em;
+}
+
+h1 {
+	font-size: 1em;
+	color: #FFE100;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+#contacto {
+	padding: 0 1em 1em 1em;
 }
