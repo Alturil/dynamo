@@ -2,7 +2,7 @@ $(document).ready(function(){
     
 	var radio = $("#Audio");
 
-	alert(radio.id);
+	//alert(radio.id);
 
 /*
     $("#volume").change(function(){

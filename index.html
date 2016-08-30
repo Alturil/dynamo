@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
 	<link rel="stylesheet" type="text/css" href="css/slider.css">
 	<link rel="stylesheet" type="text/css" href="css/form.css">
+
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/js.js"></script>
-<head>
+
 	<title>Dynamo - Sala de Ensayo</title>
 </head>
 <body>
 
 	<nav>
 		<ul class="row">
-			<li><a href="#" alt="">Inicio</a></li>
-			<li><a href="#" alt="">Contacto</a></li>
-			<li><a href="#" alt="">Reservas</a></li>
-			<li><a href="#" alt="">Social media</a></li>
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#contact">Contacto</a></li>
+			
+			<li><a href="#social-media">Social media</a></li>
 		</ul>
 	</nav>
 
 	<div class="hero">
 		<section class="row">
+			<h1>Radio Dynamo</h1>
 			<p>Estas escuchando nuestra radio en vivo</p>			
 			<br>
 			<input type="range" min="0" max="100" step="1" name="volume" id="volume">
-			<audio autoplay=false id="audio">
+			<audio autoplay id="audio">
 				<source src="http://audio-mp3.ibiblio.org:8000/wcpe.mp3" type="audio/mpeg">
 		  		<source src="http://audio-ogg.ibiblio.org:8000/wcpe.ogg" type="audio/ogg">
 				Tu browser no soporta HTML5 audio :(
@@ -35,8 +40,8 @@
 		</section>
 	</div>
 
-	<section class="row" id="contacto">
-		<div class="col-6">
+	<div class="row">
+		<section class="col-6" id="contact">
 			<h1>Contacto</h1>
 			<form>
 				<label for="email">email:</label>
@@ -45,8 +50,17 @@
 	  			<textarea name="message" id="message"></textarea>
 	  			<input type="submit" value="Enviar">
 			</form>
-		</div>
-	</section>
+		</section>
+		<section class="col-6" id="social-media">
+			<h1>Social media</h1>
+			<p>Seguinos en nuestras redes sociales:</p>
+			<div id="social-icons">
+				<a target="_blank" href="https://www.facebook.com/Dynamo-Saladeensayo"><i class="fa fa-facebook"></i></a>
+				<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+				<a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
+			</div>			
+		</section>
+	</div>
 
 </body>
 </html>

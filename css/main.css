@@ -4,7 +4,7 @@
 
 /* GRID */
 
-.row	{width: 1000px; margin: auto;	}
+.row	{max-width: 1000px; margin: auto; display: flex;	}
 .col-1 	{width: 8.33%;	}
 .col-2 	{width: 16.66%;	}
 .col-3 	{width: 25%;	}
@@ -18,10 +18,31 @@
 .col-11 {width: 91.66%;	}
 .col-12 {width: 100%;	}
 
+[class*="col-"] {
+        padding: 1em;
+    }
+
 body, html {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+}
+
+@media screen and (max-width: 800px) {
+    
+    .row {
+    	flex-direction: column;    	
+    	width: 100%;
+    }
+
+    [class*="col-"] {
+        width: auto;               
+    }
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }
 
 body {
@@ -60,6 +81,30 @@ h1 {
 	font-weight: normal;
 }
 
-#contacto {
-	padding: 0 1em 1em 1em;
+#social-media i {
+	font-size: 1.5em;
+	border-radius: 50%;		
+	background: #333;
+	width: 1.7em;
+	height: 1.7em;
+	position: relative;
+	cursor: pointer;
+	margin: 0 0.3em;
+}
+
+#social-media i:before {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);	
+}
+
+#social-media i:hover {
+	color: #FFE100;
+}
+
+#social-icons {
+	display: flex;
+	justify-content: center;
+	margin: 2em 0;	
 }
