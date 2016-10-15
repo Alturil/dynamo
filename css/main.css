@@ -122,6 +122,27 @@ h1 {
 	display: none;	
 }
 
+/* Provisorio */
+
+
+.controls > div {
+	display: flex;
+	width: 40%;
+	justify-content: center;
+}
+
+.controls p {
+	font-size: 1.5rem;
+}
+
+.hero {
+	height: 35rem;
+}
+
+.controlsMobile {
+	flex-direction: column;
+}
+
 @media screen and (max-width: 800px) {
     
     .row {
@@ -174,9 +195,20 @@ h1 {
 		max-width: 100%;
 	}
 
+	/*Provisorio*/
+
+	.controls {
+		flex-direction: column;
+	}
+
+	.hero {
+		height: 45rem;
+	}
+
 }
 
 .menu-expand {
     height: auto !important;
     overflow: auto !important;*/
 }
+

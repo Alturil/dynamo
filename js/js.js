@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     var audio = $('<audio />', {
-      autoPlay : 'autoplay'        
+      // autoPlay : 'autoplay'        
     });
 
     var playing = 1;

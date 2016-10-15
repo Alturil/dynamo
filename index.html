@@ -36,9 +36,63 @@
 			<img src="img/logo.png"  width="550">
 			<p>Estas escuchando nuestra radio en vivo</p>
 			<div class="controls">
-				<i id="playPause" class="fa fa-pause-circle-o" aria-hidden="true"></i>
-				<input type="range" min="0" max="100" step="1" name="volume" id="volume">
-			</div>	
+				<div class="column">
+					<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="340" height="220" align="middle">
+						<param name="movie" value="http://www.playerstreaming.com/beta/public_html/player/audio/aacplayer.swf">
+						<param name="quality" value="best">
+						<param name="bgcolor" value="#141414">
+						<param name="play" value="true">
+						<param name="loop" value="false">
+						<param name="wmode" value="transparent">
+						<param name="scale" value="showall">
+						<param name="menu" value="false">
+						<param name="devicefont" value="false">
+						<param name="salign" value="">
+						<param name="allowScriptAccess" value="sameDomain">
+						<param name="FlashVars" value="uid=9GRoHHzbwYnSZxC1bohVTU7BEkvLbxBuv">
+						<!--[if !IE]>-->
+						<object type="application/x-shockwave-flash" data="http://www.playerstreaming.com/beta/public_html/player/audio/aacplayer.swf" width="340" height="220">
+						<param name="movie" value="http://www.playerstreaming.com/beta/public_html/player/audio/aacplayer.swf">
+						<param name="quality" value="best">
+						<param name="play" value="true">
+						<param name="loop" value="false">
+						<param name="wmode" value="transparent">
+						<param name="scale" value="showall">
+						<param name="menu" value="false">
+						<param name="devicefont" value="false">
+						<param name="salign" value="">
+						<param name="allowScriptAccess" value="sameDomain">
+						<param name="FlashVars" value="uid=9GRoHHzbwYnSZxC1bohVTU7BEkvLbxBuv">
+						<!--<![endif]-->
+						<a href="http://www.adobe.com/go/getflash"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"></a>
+						<!--[if !IE]>-->
+					</object>
+					<!--<![endif]-->
+					</object>
+				</div>
+
+				<div class="controlsMobile">
+					<p>Escuchanos en tu celular:</p>
+					<div>
+						<a href="http://server4.veemesoft.com.ar:26948/listen.pls" alt="Winamp"><img width="40" src="http://www.veemesoft.com.ar/images/winamp.png" border="0" /></a>
+						<a href="http://sisteplay1.streamwowza.com:1935/radiohd/26948/playlist.m3u8" alt="Iphone">
+						  <img src="http://streamwowza.com/system/theme/MediaPanel/images/iphone.gif" border="0" />
+						</a>
+						<a href="rtsp://sisteplay1.streamwowza.com:1935/radiohd/26948/" alt="Android">
+						  <img src="http://streamwowza.com/system/theme/MediaPanel/images/android.gif" border="0" />
+						</a>
+						<a href="rtsp://sisteplay1.streamwowza.com:1935/radiohd/26948" alt="Blackberry">
+						  <img src="http://streamwowza.com/system/theme/MediaPanel/images/blackberry.gif" border="0" />
+						</a>	
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- <div class="controls"> -->
+				<!-- <i id="playPause" class="fa fa-pause-circle-o" aria-hidden="true"></i> -->
+				<!-- <input type="range" min="0" max="100" step="1" name="volume" id="volume"> -->
+			<!-- </div>	 -->
 		</section>
 	</div>
 
