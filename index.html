@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
-	<link rel="stylesheet" type="text/css" href="css/slider.css">
+	<link rel="stylesheet" type="text/css" href="css/controls.css">
 	<link rel="stylesheet" type="text/css" href="css/form.css">
 
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
@@ -13,41 +13,44 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/js.js"></script>
 
-	<title>Dynamo - Sala de Ensayo</title>
+	<title>Radio Dynamo</title>
 </head>
 <body>
 
+<main>
 	<nav>
-		<ul class="row">
-			<li><a href="#">Inicio</a></li>
-			<li><a href="#contact">Contacto</a></li>
-			
-			<li><a href="#social-media">Social media</a></li>
+		<ul id="menuIcon">
+			<span>Radio Dynamo</span>
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</ul>	
+		<ul id="links" class="row">		
+			<li><a href="#">inicio</a></li>
+			<li><a href="#contact">contacto</a></li>			
+			<li><a href="#social-media">social media</a></li>
 		</ul>
 	</nav>
 
-	<div class="hero">
-		<section class="row">
-			<h1>Radio Dynamo</h1>
-			<p>Estas escuchando nuestra radio en vivo</p>			
-			<br>
-			<input type="range" min="0" max="100" step="1" name="volume" id="volume">
-			<audio autoplay id="audio">
-				<source src="http://audio-mp3.ibiblio.org:8000/wcpe.mp3" type="audio/mpeg">
-		  		<source src="http://audio-ogg.ibiblio.org:8000/wcpe.ogg" type="audio/ogg">
-				Tu browser no soporta HTML5 audio :(
-			</audio>
+	<div class="hero">		
+		<section>
+			<!-- <h1>Radio Dynamo</h1> -->
+			<img src="img/logo.png"  width="550">
+			<p>Estas escuchando nuestra radio en vivo</p>
+			<div class="controls">
+				<i id="playPause" class="fa fa-pause-circle-o" aria-hidden="true"></i>
+				<input type="range" min="0" max="100" step="1" name="volume" id="volume">
+			</div>	
 		</section>
 	</div>
 
 	<div class="row">
 		<section class="col-6" id="contact">
 			<h1>Contacto</h1>
-			<form>
+			<div id="form-messages"></div>
+			<form id="ajax-contact" method="post" action="mailer.php">
 				<label for="email">email:</label>
-	  			<input type="email" name="email" id="email">
+	  			<input type="email" name="email" id="email" required>
 	  			<label for="message">mensaje:</label>
-	  			<textarea name="message" id="message"></textarea>
+	  			<textarea name="message" id="message" required></textarea>
 	  			<input type="submit" value="Enviar">
 			</form>
 		</section>
@@ -55,12 +58,14 @@
 			<h1>Social media</h1>
 			<p>Seguinos en nuestras redes sociales:</p>
 			<div id="social-icons">
-				<a target="_blank" href="https://www.facebook.com/Dynamo-Saladeensayo"><i class="fa fa-facebook"></i></a>
+				<a target="_blank" href="https://www.facebook.com/Dynamo-Sala-de-ensayo-1768504143393601/"><i class="fa fa-facebook"></i></a>
 				<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-				<a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
+				<a target="_blank" href="https://www.instagram.com/dynamosaladeensayo"><i class="fa fa-instagram"></i></a>
 			</div>			
 		</section>
 	</div>
+
+</main>
 
 </body>
 </html>

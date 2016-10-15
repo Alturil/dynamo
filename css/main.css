@@ -28,18 +28,6 @@ body, html {
 	padding: 0;
 }
 
-@media screen and (max-width: 800px) {
-    
-    .row {
-    	flex-direction: column;    	
-    	width: 100%;
-    }
-
-    [class*="col-"] {
-        width: auto;               
-    }
-}
-
 a {
 	text-decoration: none;
 	color: inherit;
@@ -54,24 +42,45 @@ body {
 }
 
 .hero {
-	background: url("../img/x-header.jpg") center;
+	background: url("../img/x-header2.jpg") center;
 	background-size: cover;
 	height: 30rem;
 	display: flex;
 	justify-content: center;
-	margin-top: 4rem;
+	align-items: center;
+	margin-top: 4rem;	
 }
 
-.hero section {	
-	display: flex;
-	height: 100%;	
-	align-items: center;
-	padding: 1em;	
+.hero section {		
+	flex-basis: 1000px;	
+	flex-flow: column;
+	align-items: center;	
+	justify-content: center;
+	padding: 1em;
+	text-align: center;
 }
 
 .hero p {
-	background: rgba(0,0,0,0.5);
+	/*background: rgba(0,0,0,0.5);*/
 	padding: 0.5em;
+	padding-top: 0;
+	/*flex-basis: content;	*/
+}
+
+.controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4rem;	
+	cursor: pointer;	
+	/*background-color: rgba(0,0,0,0.5);	*/
+	padding: 0.5rem 2rem;	
+	/*border-left: 0.5rem solid #FFE100;*/
+	/*width: 15rem;*/
+}
+
+.controls i:hover {
+	color: #FFE100;
 }
 
 h1 {
@@ -107,4 +116,67 @@ h1 {
 	display: flex;
 	justify-content: center;
 	margin: 2em 0;	
+}
+
+#menuIcon {
+	display: none;	
+}
+
+@media screen and (max-width: 800px) {
+    
+    .row {
+    	flex-direction: column;    	
+    	width: 100%;
+    }
+
+    [class*="col-"] {
+        width: auto;               
+    }
+
+    #menuIcon {
+		display: flex;
+		padding: 0.5rem 0.7rem;
+		justify-content: flex-end;
+	}
+
+	#menuIcon span {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#menuIcon i {
+		font-size: 3rem;
+		cursor: pointer;
+	}
+
+	#menuIcon i:hover {
+		color: #FFE100;		
+	}
+
+	#links {
+		height: 0;
+		overflow: hidden;
+	}
+
+	.controls {
+		width: auto;
+		/*max-width: 25rem;*/
+		justify-content: center;
+	}
+
+	.hero section {		
+		text-align: center;		
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+}
+
+.menu-expand {
+    height: auto !important;
+    overflow: auto !important;*/
 }
