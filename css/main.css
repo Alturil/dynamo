@@ -201,11 +201,27 @@ h1 {
 		flex-direction: column;
 	}
 
-	.hero {
-		height: 45rem;
+	.controls > div {
+		width: 100%;
+	}
+
+	.controls > .column {
+		display: none;
+	}
+
+	.controlsMobile {
+		border: 1px solid white;
+		border-radius: 0.2em;
+	}
+
+	.controlsMobile p {		
+		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 
 }
+
+
 
 .menu-expand {
     height: auto !important;
