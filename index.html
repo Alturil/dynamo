@@ -99,8 +99,11 @@
 	<div class="row">
 		<section class="col-6" id="contact">
 			<h1>Contacto</h1>
-			<div id="form-messages"></div>
-			<form id="ajax-contact" method="post" action="mailer.php">
+			<div class="form-messages hidden">
+				<p>Gracias por tu mensaje!</p>				
+				<span>Volver</span>
+			</div>
+			<form id="ajax-contact" method="post" action="mailer.php">  <!-- method="post" action="mailer.php" -->
 				<label for="email">email:</label>
 	  			<input type="email" name="email" id="email" required>
 	  			<label for="message">mensaje:</label>

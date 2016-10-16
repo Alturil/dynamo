@@ -1,0 +1,57 @@
+En un archivo html, utiliza el siguiente código:
+
+<html>
+<head>
+<title>Formulario de envio</title>
+</head>
+<body bgColor="#afafaf">
+<h2>Formulario de contacto PHP</h2>
+<form method="post" action="send.php">
+<table>
+<tr>
+<td>Nombre</td>
+<td><input name="nombre"></td>
+</tr>
+<tr>
+<td>E-mail</td>
+<td><input name="email"></td>
+</tr>
+<tr>
+<td>Comentario</td>
+<td><textarea rows="8"cols="50" name="comentario"></textarea></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" value="Enviar"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+<html>
+
+---------------------------------------------------------------------
+
+En un archivo PHP denominado send.php, utiliza el siguiente código:
+
+<?php
+if(isset($_POST["nombre"]) && isset($_POST["email"]) && isset($_POST["comentario"]) ){
+$to = "CUENTA_DESTINO@DOMINIO.COM";
+$subject = "Mensaje Enviado";
+$contenido .= "Nombre: ".$_POST["nombre"]."\n";
+$contenido .= "Email: ".$_POST["email"]."\n\n";
+$contenido .= "Comentario: ".$_POST["comentario"]."\n\n";
+$header = "From: CUENTA_DE_TU_DOMINIO@TU_DOMINIO.COM\nReply-To:".$_POST["email"]."\n";
+$header .= "Mime-Version: 1.0\n";
+$header .= "Content-Type: text/plain";
+if(mail($to, $subject, $contenido ,$header)){
+echo "Mail Enviado.";
+}
+}
+?>
+
+---------------------------------------------------------------------
+
+Importante: En el script php deberás cambiar:
+
+    CUENTA_DESTINO@DOMINIO.COM por una cuenta de correo que desee
+    CUENTA_DE_TU_DOMINIO@TU_DOMINIO.COM por una cuenta de correo creada desde tu panel de control Ferozo

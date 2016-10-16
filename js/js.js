@@ -56,6 +56,20 @@ $(document).ready(function(){
         $("#links").toggleClass("menu-expand");        
     });
 
+    $(".form-messages span").click(function(){
+        hideFormMessages();
+    });
+
+    var hideFormMessages = function() {
+       $(".form-messages").addClass('hidden');
+       $("#ajax-contact").removeClass('hidden');
+    }
+
+    var showFormMessages = function(text) {
+       $(".form-messages p").html(text);
+       $(".form-messages").removeClass('hidden');
+       $("#ajax-contact").addClass('hidden');
+    }
 
     // $(window).resize(checkSize);
 
@@ -71,52 +85,54 @@ $(document).ready(function(){
 
     // --------------------- FORM
 
-    // // Get the form.
-    // var form = $('#ajax-contact');
+    // Get the form.
+    var form = $('#ajax-contact');
 
-    // // Get the messages div.
-    // var formMessages = $('#form-messages');
+    // Get the messages div.
+    var formMessages = $('#form-messages');
 
-    // // Set up an event listener for the contact form.
-    // $(form).submit(function(e) {
-    //     // Stop the browser from submitting the form.
-    //     e.preventDefault();
+    // Set up an event listener for the contact form.
+    $(form).submit(function(e) {
+        // Stop the browser from submitting the form.
+        e.preventDefault();
 
-    //     // Serialize the form data.
-    //     var formData = $(form).serialize();
+        // Serialize the form data.
+        var formData = $(form).serialize();
 
-    //     // Submit the form using AJAX.
-    //     $.ajax({
-    //         type: 'POST',
-    //         url: $(form).attr('action'),
-    //         data: formData
-    //     })
-    //     .done(function(response) {
-    //         // Make sure that the formMessages div has the 'success' class.
-    //         //$(formMessages).removeClass('error');
-    //         //$(formMessages).addClass('success');
+        // Submit the form using AJAX.
+        $.ajax({
+            type: 'POST',
+            url: 'mailer.php',
+            data: formData
+        })
+        .done(function(response) {
+            // Make sure that the formMessages div has the 'success' class.
+            //$(formMessages).removeClass('error');
+            //$(formMessages).addClass('success');
 
-    //         // Set the message text.
-    //         $(formMessages).text(response);
+            // Set the message text.
+            // $(formMessages).text(response);
+            showFormMessages(response);
 
-    //         // Clear the form.            
-    //         $('#email').val('');
-    //         $('#message').val('');
-    //     })
-    //     .fail(function(data) {
-    //         // Make sure that the formMessages div has the 'error' class.
-    //         //$(formMessages).removeClass('success');
-    //         //$(formMessages).addClass('error');
+            // Clear the form.            
+            $('#email').val('');
+            $('#message').val('');
+        })
+        .fail(function(data) {
+            // Make sure that the formMessages div has the 'error' class.
+            //$(formMessages).removeClass('success');
+            //$(formMessages).addClass('error');
 
-    //         // Set the message text.
-    //         if (data.responseText !== '') {
-    //             $(formMessages).text(data.responseText);
-    //         } else {
-    //             $(formMessages).text('Uuuupa!');
-    //         }
-    //     });
+            // Set the message text.
+            if (data.responseText !== '') {
+                // $(formMessages).text(data.responseText);
+                showFormMessages(data.responseText);
+            } else {
+                $(formMessages).text('Error!');
+            }
+        });
 
-    // });
+    });
 
 
 });

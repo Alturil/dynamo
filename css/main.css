@@ -197,6 +197,10 @@ h1 {
 
 	/*Provisorio*/
 
+	.hero {
+		height: 30rem;
+	}
+
 	.controls {
 		flex-direction: column;
 	}
@@ -228,3 +232,29 @@ h1 {
     overflow: auto !important;*/
 }
 
+.hidden {
+	display: none !important;
+}
+
+.form-messages {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 2rem 1rem;
+}
+
+.form-messages span {
+	color: #FFE100;
+	border: 1px solid #FFE100;
+	border-radius: 5em;
+	padding: 0.5rem 1rem;
+	margin: 1rem 0;
+	cursor: pointer;
+}
+
+.form-messages span:hover {
+	background: #FFE100;
+	color: black;
+	border: 0;
+}

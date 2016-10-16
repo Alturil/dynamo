@@ -14,20 +14,13 @@
             exit;
         }
 
-        // Set the recipient email address.
-        // FIXME: Update this to your desired email address.
+        // Set the recipient, subject, content and headers:
         $recipient = "alturil@gmail.com";
-
-        // Set the email subject.
-        $subject = "Nuevo mensaje!";
-
-        // Build the email content.        
+        $subject = "Nuevo mensaje para la radio!";
         $email_content .= "Email: $email\n\n";
-        $email_content .= "Message:\n$message\n";
-
-        // Build the email headers.
+        $email_content .= "Mensaje:\n$message\n";
         $email_headers = "From: $email <$email>";
-
+        
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
@@ -36,13 +29,13 @@
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            echo "No, pibe!";
+            echo "500 - Ha ocurrido un error en el servidor... :(";
         }
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
         http_response_code(403);
-        echo "Naranja";
+        echo "403 - Operacion no autorizada";
     }
 
 ?>
