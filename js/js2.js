@@ -105,7 +105,7 @@ $(document).ready(function(){
         // Submit the form using AJAX.
         $.ajax({
             type: 'POST',
-            url: 'mailer.php',
+            url: 'mailer.asp',
             data: formData
         })
         .done(function(response) {
@@ -118,7 +118,7 @@ $(document).ready(function(){
             showFormMessages(response);
 
             // Clear the form.            
-            $('#email').val('');
+            $('#nombre').val('');
             $('#message').val('');
         })
         .fail(function(data) {

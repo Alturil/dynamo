@@ -76,7 +76,7 @@ body {
 	/*background-color: rgba(0,0,0,0.5);	*/
 	padding: 0.5rem 2rem;	
 	/*border-left: 0.5rem solid #FFE100;*/
-	/*width: 15rem;*/
+	/*width: 15rem;*/	
 }
 
 .controls i:hover {
@@ -199,28 +199,6 @@ h1 {
 
 	.hero {
 		height: 30rem;
-	}
-
-	.controls {
-		flex-direction: column;
-	}
-
-	.controls > div {
-		width: 100%;
-	}
-
-	.controls > .column {
-		display: none;
-	}
-
-	.controlsMobile {
-		border: 1px solid white;
-		border-radius: 0.2em;
-	}
-
-	.controlsMobile p {		
-		margin-bottom: 0;
-		padding-bottom: 0;
 	}
 
 }

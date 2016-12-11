@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/js.js"></script>
+	<script src="js/js2.js"></script>
 
 	<title>Radio Dynamo</title>
 </head>
@@ -55,9 +55,9 @@
 				<p>Gracias por tu mensaje!</p>				
 				<span>Volver</span>
 			</div>
-			<form id="ajax-contact" method="post" action="mailer.php">  <!-- method="post" action="mailer.php" -->
-				<label for="email">email:</label>
-	  			<input type="email" name="email" id="email" required>
+			<form id="ajax-contact" action="post" action="mailer.asp">  <!-- method="post" action="mailer.php" -->
+				<label for="nombre">nombre:</label>
+	  			<input name="nombre" id="nombre" required>
 	  			<label for="message">mensaje:</label>
 	  			<textarea name="message" id="message" required></textarea>
 	  			<input type="submit" value="Enviar">
