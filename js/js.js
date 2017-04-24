@@ -63,29 +63,46 @@ $(document).ready(function(){
     {
         $.ajax({
             type: 'GET',
-            url: 'http://server4.veemesoft.com.ar:26948/7',            
-            dataType: 'text/plain',
-            Origin: "http://dynamoradio.com.ar"
+            url: 'http://server4.veemesoft.com.ar:26948/7.html',            
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            jsonpCallback: 'jsonpCallback',
         })
         .done(function(response) {
-            $("#metadata-artist").html(response.toString());        
+            $("#metadata-track").html(response.toString());        
             // alert(response);
         });
     }
 
-/*
-    function getMetadata() {
-    var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                $("#metadata-artist").html(this.responseText);
-            }
+    // FRUTAAAAAAAAAA
+
+    var rawData = '<HTML><meta http-equiv="Pragma" content="no-cache"></head><body>0,0,8,100,0,48,snarky puppy</body></html>';
+
+    var getSearchString = function(rawData)
+    {
+        var contentRegex = /<body>(.*)<\/body>/;
+        var content = rawData.match(contentRegex)[1];
+        return content.split(",").slice(6).join(",");
     };
-    xhttp.open("GET", "http://server4.veemesoft.com.ar:26948/7", true);
-    xhttp.send();
-}
-*/
-    getMetadata();
+
+    $("#metadata-track").html(getSearchString(rawData));
+
+    var updateAlbumCoverUrl = function(searchString)
+    {
+        $.ajax({
+            type: 'GET',
+            url: 'https://itunes.apple.com/search?term=' + searchString,
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            jsonpCallback: 'jsonpCallback',
+        })
+        .done(function(response) {
+            $("#metadata-cover").attr("src", response.results[0].artworkUrl100.replace("100x100","200x200"));
+        });
+    }    
+
+    updateAlbumCoverUrl(getSearchString(rawData));
+    // getMetadata();
 
     // --------------------- FORM
 
