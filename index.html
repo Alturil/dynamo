@@ -30,19 +30,24 @@
 		</ul>
 	</nav>
 
+	<audio id="audio">
+		<source src="http://server4.veemesoft.com.ar:26948/;" />
+	</audio>
+
 	<div class="hero">		
 		<section>
 			<!-- <h1>Radio Dynamo</h1> -->
 			<img src="img/logo.png"  width="550">
 			<p>Estas escuchando nuestra radio en vivo</p>
 
+			<div id="metadata">
+				<p id="metadata-artist">Artist</p>
+				<p id="metadata-track">Song</p>
+			</div>			
+
 			<div class="controls">
 				<i id="playPause" class="fa fa-pause-circle-o" aria-hidden="true"></i>
 				<input type="range" min="0" max="100" step="1" name="volume" id="volume" value="100">
-			</div>	
-
-			<!-- Lo anterior -->
-
 			</div>
 
 		</section>
@@ -55,9 +60,9 @@
 				<p>Gracias por tu mensaje!</p>				
 				<span>Volver</span>
 			</div>
-			<form id="ajax-contact" method="post" action="mailer.php">  <!-- method="post" action="mailer.php" -->
-				<label for="email">email:</label>
-	  			<input type="email" name="email" id="email" required>
+			<form id="ajax-contact" action="post" action="mailer.asp">  <!-- method="post" action="mailer.php" -->
+				<label for="nombre">nombre:</label>
+	  			<input name="nombre" id="nombre" required>
 	  			<label for="message">mensaje:</label>
 	  			<textarea name="message" id="message" required></textarea>
 	  			<input type="submit" value="Enviar">

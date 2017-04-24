@@ -1,43 +1,26 @@
 $(document).ready(function(){
 
-    var audio = $('<audio />', {
-      autoPlay : 'autoplay'        
-    });
+    var audio = $("#audio");
+    var playing;
 
-     
-    // Call our addSource function, and pass in the audio element
-    // and the path(s) to your audio.
-    // addSource(audio, 'http://audio-mp3.ibiblio.org:8000/wcpe.mp3');
-    // addSource(audio, 'http://audio-ogg.ibiblio.org:8000/wcpe.ogg');
-    addSource(audio, 'http://server4.veemesoft.com.ar:26948/;');
-    // addSource(audio, 'http://server4.veemesoft.com.ar:26948/;');
-   
-    audio.appendTo('body');
-    
-    var playing = 1;
-     
-   // Adds a source element, and appends it to the audio element, represented 
-   // by elem.
-    function addSource(elem, path) {
-      $('<source />').attr('src', path).appendTo(elem);
+    if (/Mobi/.test(navigator.userAgent)) {
+        playing = 0;
+        $("#playPause").removeClass("fa-pause-circle-o").addClass("fa-play-circle-o");
     }
+    else{        
+        audio.attr('autoplay', 'autoplay');
+        playing = 1;
+    }     
 
-
-    $("#volume").change(function(){
-        //alert($("#volume").val() / 100);
-        audio.prop("volume", $("#volume").val() / 100);
-        //alert(audio.volume);
-        //audio.pause();
-        //alert($('#audio').id);
-        //alert($("#volume").slider('values'););
-        //alert( $('#audio').volume() );
+    $("#volume").change(function(){     
+        audio.prop("volume", $("#volume").val() / 100);        
     });
 
     $("#playPause").click(function(){
         togglePlay(this);
     });
 
-    function togglePlay(element){
+    function togglePlay(element){        
         if ( playing == 0 ) {
             audio.trigger("play");
             $(element).removeClass("fa-play-circle-o").addClass("fa-pause-circle-o");
@@ -45,14 +28,14 @@ $(document).ready(function(){
         }
         else
         {
-            audio.trigger("pause");
-            $(element).removeClass("fa-pause-circle-o").addClass("fa-play-circle-o");                        
+            audio.trigger("pause");            
+            $(element).removeClass("fa-pause-circle-o").addClass("fa-play-circle-o");
             playing = 0;
         }
     }
 
     $("#menuIcon i").click(function(){        
-        $("#links").toggleClass("menu-expand");        
+        $("#links").toggleClass("menu-expand");        s
     });
 
     $("#links a").click(function(){        
@@ -74,17 +57,35 @@ $(document).ready(function(){
        $("#ajax-contact").addClass('hidden');
     }
 
-    // $(window).resize(checkSize);
+    // - METADATA ********************
 
-    // function checkSize() {
+    var getMetadata = function()
+    {
+        $.ajax({
+            type: 'GET',
+            url: 'http://server4.veemesoft.com.ar:26948/7',            
+            dataType: 'text/plain',
+            Origin: "http://dynamoradio.com.ar"
+        })
+        .done(function(response) {
+            $("#metadata-artist").html(response.toString());        
+            // alert(response);
+        });
+    }
 
-    //     // Desktop
-    //     if ($(body).css("width") >= "1000px" ){
-    //         alert("puto"});
-    //         $("#links").removeClass('menu-expand');
-    //     }
-
-    // }
+/*
+    function getMetadata() {
+    var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                $("#metadata-artist").html(this.responseText);
+            }
+    };
+    xhttp.open("GET", "http://server4.veemesoft.com.ar:26948/7", true);
+    xhttp.send();
+}
+*/
+    getMetadata();
 
     // --------------------- FORM
 
@@ -105,7 +106,7 @@ $(document).ready(function(){
         // Submit the form using AJAX.
         $.ajax({
             type: 'POST',
-            url: 'mailer.php',
+            url: 'mailer.asp',
             data: formData
         })
         .done(function(response) {
@@ -118,7 +119,7 @@ $(document).ready(function(){
             showFormMessages(response);
 
             // Clear the form.            
-            $('#email').val('');
+            $('#nombre').val('');
             $('#message').val('');
         })
         .fail(function(data) {
